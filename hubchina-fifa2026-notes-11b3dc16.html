@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HubChina FIFA 2026 · 站点介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f9f6f0;
+            font-family: 'Segoe UI', 'Noto Sans SC', system-ui, -apple-system, sans-serif;
+            color: #2c2b28;
+            line-height: 1.7;
+            padding: 0 1.2rem;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 1.8rem 1rem 3rem;
+        }
+
+        /* 顶部导航 */
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 1rem 0;
+            border-bottom: 1px solid #ded9cf;
+            margin-bottom: 2.6rem;
+        }
+
+        .site-title {
+            font-size: 1.3rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            color: #3f3b35;
+        }
+        .site-title span {
+            font-weight: 300;
+            color: #9b8e7c;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            color: #5f574b;
+            text-decoration: none;
+            font-size: 0.95rem;
+            padding: 0.2rem 0;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s ease;
+        }
+        .nav-links a:hover {
+            border-bottom-color: #b5a48b;
+            color: #3a342b;
+        }
+
+        /* hero */
+        .hero {
+            margin: 1.8rem 0 2.8rem;
+            padding: 1.6rem 0 1rem;
+        }
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 350;
+            letter-spacing: 0.01em;
+            line-height: 1.2;
+            color: #2c2a25;
+        }
+        .hero h1 em {
+            font-style: normal;
+            background: #efe9df;
+            padding: 0 0.3rem;
+        }
+        .hero .sub {
+            font-size: 1.1rem;
+            color: #625b50;
+            margin-top: 1rem;
+            max-width: 640px;
+        }
+
+        /* 介绍区块 */
+        .intro-box {
+            background: #ffffffd8;
+            border-left: 5px solid #c5b8a3;
+            padding: 1.8rem 2rem;
+            margin: 2.4rem 0;
+            border-radius: 0 10px 10px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+        }
+        .intro-box p {
+            margin-bottom: 1rem;
+        }
+        .intro-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight-link {
+            background: #f0ece4;
+            padding: 0.1rem 0.3rem;
+            border-radius: 3px;
+            color: #4a4238;
+            font-weight: 450;
+            text-decoration: none;
+            border-bottom: 1px dashed #aa9d8a;
+            transition: 0.15s;
+        }
+        .highlight-link:hover {
+            background: #e3d9ca;
+            border-bottom-style: solid;
+        }
+
+        /* 三场景卡片 */
+        .scenes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.8rem;
+            margin: 2.8rem 0 2.2rem;
+        }
+
+        .scene-card {
+            background: #ffffffec;
+            border-radius: 12px;
+            padding: 1.6rem 1.3rem 1.8rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.02), 0 1px 2px rgba(0,0,0,0.03);
+            transition: 0.15s ease;
+            border: 1px solid #ede7dd;
+        }
+        .scene-card:hover {
+            box-shadow: 0 6px 14px rgba(0,0,0,0.04);
+            border-color: #d6cdbd;
+            transform: translateY(-2px);
+        }
+        .scene-card h3 {
+            font-size: 1.2rem;
+            font-weight: 450;
+            letter-spacing: 0.01em;
+            margin-bottom: 0.6rem;
+            color: #3f3a31;
+            border-bottom: 1px solid #e7dfd2;
+            padding-bottom: 0.3rem;
+        }
+        .scene-card p {
+            font-size: 0.95rem;
+            color: #4b463d;
+            margin-bottom: 0.5rem;
+        }
+        .scene-card .tag {
+            display: inline-block;
+            margin-top: 0.6rem;
+            background: #efeadf;
+            font-size: 0.78rem;
+            padding: 0.2rem 0.7rem;
+            border-radius: 30px;
+            color: #4e483c;
+        }
+
+        /* 引用块 / 说明框 */
+        .info-callout {
+            background: #f4efe6;
+            border: 1px solid #dcd3c4;
+            border-radius: 14px;
+            padding: 1.6rem 2rem;
+            margin: 2.4rem 0;
+            font-size: 0.95rem;
+        }
+        .info-callout strong {
+            font-weight: 500;
+            color: #2f2b24;
+        }
+        .info-callout p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* FAQ 摘要 */
+        .faq-summary {
+            margin: 2.4rem 0 1.8rem;
+        }
+        .faq-summary h2 {
+            font-weight: 400;
+            font-size: 1.5rem;
+            letter-spacing: 0.01em;
+            color: #35312b;
+            margin-bottom: 1.2rem;
+            border-left: 4px solid #cbbca9;
+            padding-left: 0.8rem;
+        }
+        .faq-item {
+            border-bottom: 1px solid #e2d9cc;
+            padding: 0.8rem 0;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-q {
+            font-weight: 480;
+            color: #3b352e;
+            font-size: 0.98rem;
+        }
+        .faq-a {
+            color: #5b554b;
+            font-size: 0.92rem;
+            margin-top: 0.2rem;
+            padding-left: 0.5rem;
+        }
+
+        /* 尾部 */
+        .footer-note {
+            margin-top: 3rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #ddd6ca;
+            font-size: 0.85rem;
+            color: #7d7568;
+            text-align: center;
+        }
+
+        /* 响应式 */
+        @media (max-width: 740px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .scenes-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+            .top-nav {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.8rem;
+            }
+            .nav-links {
+                gap: 1.2rem;
+            }
+            .intro-box {
+                padding: 1.3rem 1.2rem;
+            }
+            .info-callout {
+                padding: 1.2rem 1.2rem;
+            }
+        }
+
+        @media (max-width: 460px) {
+            body {
+                padding: 0 0.6rem;
+            }
+            .container {
+                padding: 1rem 0.2rem 2.5rem;
+            }
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- 导航 -->
+    <nav class="top-nav">
+        <div class="site-title"><span>HubChina</span> · FIFA 2026</div>
+        <div class="nav-links">
+            <a href="#">关于</a>
+            <a href="#">场景</a>
+            <a href="#">常见问题</a>
+            <a href="#">联系</a>
+        </div>
+    </nav>
+
+    <!-- hero -->
+    <div class="hero">
+        <h1>关于 <em>2026 世界杯</em><br>与站点信息的说明</h1>
+        <div class="sub">一份平实、清晰的介绍页，帮助你了解这个站点以及它和 <strong>世界杯</strong> 的关系。</div>
+    </div>
+
+    <!-- 核心介绍 + 可信说明 -->
+    <div class="intro-box">
+        <p><strong>hubchina-fifa2026.com</strong> 是一个致力于整合与介绍 2026 年国际足联世界杯相关基础信息的个人项目站点。站内内容围绕赛事背景、主办城市、场馆概况以及观赛参考展开，所有公开资料均标注来源或整理自官方渠道。</p>
+        <p>站点与 FIFA（国际足球联合会）及其所属机构无直接隶属或商业合作，目的为信息聚合与学习交流。如果你正在寻找一个简洁且可靠的 2026 年 <a href="https://hubchina-fifa2026.com" class="highlight-link">世界杯</a> 中文信息起点，可以从此处开始浏览。</p>
+        <p style="color: #6b6256; font-size: 0.92rem;">✓ 非官方 · 信息整理 · 持续更新</p>
+    </div>
+
+    <!-- 三个场景模块 -->
+    <div class="scenes-grid">
+        <div class="scene-card">
+            <h3>🏟️ 赛事与城市</h3>
+            <p>介绍北美三国（美国、加拿大、墨西哥）的 16 个主办城市与场馆容量、球场特色，以及赛事日程的粗略框架。适合初步了解地理分布。</p>
+            <span class="tag">城市 · 场馆</span>
+        </div>
+        <div class="scene-card">
+            <h3>📋 观赛参考</h3>
+            <p>汇总签证政策、时区差异、本地交通及住宿参考，帮助你评估旅行可能性。所有信息仅为提示，具体以官方最新公告为准。</p>
+            <span class="tag">行前 · 实用</span>
+        </div>
+        <div class="scene-card">
+            <h3>📚 历史与背景</h3>
+            <p>2026 世界杯将是首次由三国联合举办，也是扩军至 48 支队伍的首届赛事。我们会用平实的语言梳理改制要点与历届对比。</p>
+            <span class="tag">知识 · 赛制</span>
+        </div>
+    </div>
+
+    <!-- 说明框 / callout -->
+    <div class="info-callout">
+        <p><strong>📌 关于可信度与内容边界</strong></p>
+        <p>本站所有非原始数据均标注出处或附参考链接。我们不提供门票购买、签证代办或任何形式的收费服务。页面不包含诱导性表述或隐藏链接。内容会随着官方信息发布做定期修正。</p>
+        <p style="margin-top: 0.3rem;">—— 如果你发现信息有误或希望补充，欢迎通过站点页脚的邮箱反馈（当前为静态页，后续可能增加提交入口）。</p>
+    </div>
+
+    <!-- 常见说明 / FAQ 摘要 -->
+    <div class="faq-summary">
+        <h2>常见说明</h2>
+        <div class="faq-item">
+            <div class="faq-q">🔹 这个网站是官方售票平台吗？</div>
+            <div class="faq-a">不是。网站不涉及任何交易或票务代理，只提供整理后的参考信息。购票请认准 FIFA 官方渠道。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">🔹 信息多久更新一次？</div>
+            <div class="faq-a">目前由维护者根据公开新闻与官方公告不定期更新。重大日程变更或场馆调整会尽快同步。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">🔹 为什么选择这个域名？</div>
+            <div class="faq-a">域名取 “Hub China” 与 FIFA 2026 的组合，意在成为一个面向中文用户的 2026 年 <a href="https://hubchina-fifa2026.com" style="color: #5c5346; text-decoration: underline; text-underline-offset: 3px;">世界杯</a> 信息聚合节点。简洁、直接、无广告。</div>
+        </div>
+    </div>
+
+    <!-- 底部 -->
+    <div class="footer-note">
+        <span>HubChina FIFA 2026 · 信息聚合页 · 非官方 · 仅供学习交流</span>
+    </div>
+</div>
+</body>
+</html>
